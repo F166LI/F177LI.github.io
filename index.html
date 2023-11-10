@@ -56,6 +56,7 @@
                   top.canvas.height = top.height = height;
                   window.width = this.width;
                   window.height = this.height;
+                  // window.height = this.height/1.5;
               }
               else {
                   console.error("There is no canvas!");
@@ -1134,17 +1135,16 @@
 
         var titleParticles = [];
         var fireworks = [];
-        var particles = [];
+        var particles = []; //烟花爆炸
 
         var gravity = 0.1;
 
         setTimeout(function() {
             setInterval(function() {
-                fireworks.push(new Firework(Math.random() * width, height, Math.random() - 0.5, -(Math.random() * 7 + 5)));
+                fireworks.push(new Firework(Math.random() * width, height/1.5, Math.random() - 0.5, -(Math.random() * 7 + 5)));
             }, 200);
         }, 2000);
-
-        fireworks.push(new Firework(width / 2, height, 0, -9.5, 10, "gold", true));
+        fireworks.push(new Firework(width/2, height/1.5, 0, -9.5, 10, "gold", true));
         // setInterval(function() {
         //     fireworks.push(new Firework(width / 2, height, 0, -9.5, 10, "gold", true));
         // }, 5000);
